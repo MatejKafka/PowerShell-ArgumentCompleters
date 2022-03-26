@@ -3,9 +3,7 @@ Set-StrictMode -Version Latest
 # do not export internal completion functions
 Export-ModuleMember
 
-#
-# Helper function to create a new completion results
-#
+# Helper function to create new completion results
 function New-CompletionResult
 {
     param([Parameter(Position=0, ValueFromPipelineByPropertyName, Mandatory, ValueFromPipeline)]
@@ -63,5 +61,5 @@ function New-CompletionResult
 
 Get-ChildItem -File $PSScriptRoot\Completers | % {
 	Write-Verbose "Registering argument completers from '$($_.Name)'"
-	. $_
+	. $_.FullName
 }
