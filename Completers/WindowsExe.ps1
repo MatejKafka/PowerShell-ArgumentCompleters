@@ -1169,7 +1169,7 @@ function BCDEditExeCompletion
 
 # Complete parameters and arguments to powershell.exe
 Register-ArgumentCompleter `
-    -Command 'PowerShell' `
+    -Command @('PowerShell', "pwsh") `
     -Native `
     -ScriptBlock $function:PowerShellExeCompletion
 
