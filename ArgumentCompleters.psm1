@@ -59,7 +59,7 @@ function New-CompletionResult
 }
 
 
-Get-ChildItem -File $PSScriptRoot\Completers | % {
+Get-ChildItem $PSScriptRoot\Completers -File | % {
 	Write-Verbose "Registering argument completers from '$($_.Name)'"
 	. $_.FullName
 }
